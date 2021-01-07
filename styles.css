@@ -122,10 +122,10 @@
 section {
    padding: 100px 0;
 }
-.about {
+.about, .services {
    font-family: 'Poppins', sans-serif;
 }
-.about .title {
+section .title {
    text-align: center;
    font-family: 'Ubuntu', sans-serif;
    font-size: 40px;
@@ -133,7 +133,8 @@ section {
    margin-bottom: 60px;
    padding-bottom: 20px;
 }
-.about .title::before {
+
+/*section .title::before {
    content: "";
    position: absolute;
    bottom: -160px;
@@ -143,8 +144,7 @@ section {
    background: #111;
    transform: translateX(-50%);
 }
-.about .title::after {
-   content: "Who I am";
+section .title::after {
    position: absolute;
    bottom: -170px;
    left: 50%;
@@ -154,7 +154,12 @@ section {
    background: #fff;
    transform: translateX(-50%);
 }
-.about .about-content {
+.about .title::after {
+   content: "Who I am";
+   bottom: -170px;
+}*/
+
+.about .about-content, .services .services-content {
    display: flex;
    flex-wrap: wrap;
    align-items: center;
@@ -198,6 +203,42 @@ section {
 .about .about-content .right a:hover {
    color: crimson;
    background: none;
+}
+
+/*--Services Section Styling--*/
+.services {
+   color: #fff;
+   background: #111;
+}
+.services .services-content .card {
+   width: calc(33% - 20px);
+   background: #222;
+   text-align: center;
+   border-radius: 10px;
+   padding: 20px 25px;
+   cursor: pointer;
+   transition: all .4s ease;
+}
+.services .services-content .card:hover {
+   background: crimson;
+}
+.services .services-content .card .box {
+   transition: all .4s ease;
+}
+.services .services-content .card:hover .box {
+   transform: scale(1.08);
+}
+.services .services-content .card i {
+   font-size: 40px;
+   color: crimson;
+}
+.services .services-content .card:hover i {
+   color: #fff;
+}
+.services .services-content .card .text {
+   font-size: 20px;
+   font-weight: 600;
+   margin: 10px 0 7px 0;
 }
 
 
@@ -298,6 +339,10 @@ section {
    .about .about-content .right {
       flex: 100%;
    }
+   .services .services-content .card {
+      width: calc(50% - 10px);
+      margin-bottom: 20px;
+   }
 }
 
 @media (max-width:690px) {
@@ -313,12 +358,21 @@ section {
    .home .home-content a {
       font-size: 20px;
    }
+   .services .services-content .card {
+      width: 100%;
+      
+   }
 }
 @media (max-width:500px) {
+   .home {
+      border-radius: 0px 0px 30px 30px;
+   }
    .home .home-content .text-2 {
       font-size: 30px;
+      padding-top: 10px;
    }
    .home .home-content .text-3 {
       font-size: 18px;
+      padding-top: 10px;
    }
 }
